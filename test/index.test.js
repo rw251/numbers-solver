@@ -1,4 +1,44 @@
-import { createTarget, pickNumbers } from '../index';
+import { createTarget, pickNumbers, solve } from '../index';
+
+describe('solve', () => {
+  test('solves trivial', () => {
+    const answer = solve([1,2], 3);
+    expect(answer.val).toBe(3);
+  });
+  test('solves trivial 2', () => {
+    const answer = solve([1,2,3], 9);
+    expect(answer.val).toBe(9);
+  });
+  test('real example 1', () => {
+    const answer = solve([75,5,2,5,6,9],266);
+    expect(answer.val).toBe(266);
+  });
+  test('no solution', () => {
+    const answer = solve([75,25,50,100,1,2],734);
+    expect(answer.val).toBe(730);
+  });
+
+  test('Real', () => {
+    const answer = solve([9, 6, 3, 4, 3, 1], 584);
+    expect(answer.val).toBe(585);
+  });
+  test('Real', () => {
+    const answer = solve([3, 6, 1, 7, 3, 7], 518);
+    expect(answer.val).toBe(518);
+  });
+  test('Real', () => {
+    const answer = solve([75, 7, 3, 3, 7, 1], 306);
+    expect(answer.val).toBe(306);
+  });
+  test('Real', () => {
+    const answer = solve([50, 25, 6, 4, 3, 7], 458);
+    expect(answer.val).toBe(458);
+  });
+  test('Was failing', () => {
+    const answer = solve([50, 100, 75, 25, 5, 2], 716);
+    expect(answer.val).toBe(716);
+  })
+});
 
 describe('pickNumbers', () => {
 
